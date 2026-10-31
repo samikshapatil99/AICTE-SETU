@@ -1,0 +1,16 @@
+{
+  "name": "aicte-setu-prototype",
+  "version": "0.1.0",
+  "private": true,
+  "description": "AICTE-SETU: APAAR-based Student Data Management & Verification System (prototype)",
+  "scripts": {
+    "install:all": "npm install && cd backend && npm install && cd ../frontend && npm install",
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm run dev",
+    "seed": "cd backend && npm run seed"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.0"
+  }
+}

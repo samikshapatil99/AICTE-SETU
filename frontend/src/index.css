@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; }
+body { overflow-x: hidden; }
+img, svg, video, canvas { max-width: 100%; height: auto; }
+body { font-family: Inter, system-ui, sans-serif; }

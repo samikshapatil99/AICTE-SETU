@@ -1,0 +1,23 @@
+version: "3.9"
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: aicte
+      POSTGRES_PASSWORD: aicte
+      POSTGRES_DB: aicte_setu
+    ports: ["5432:5432"]
+    volumes: [pgdata:/var/lib/postgresql/data]
+  backend:
+    build: ./backend
+    environment:
+      DATABASE_URL: postgresql://aicte:aicte@db:5432/aicte_setu
+      SECRET_KEY: change-me
+    ports: ["8000:8000"]
+    depends_on: [db]
+  frontend:
+    build: ./frontend
+    ports: ["5173:80"]
+    depends_on: [backend]
+volumes:
+  pgdata:
